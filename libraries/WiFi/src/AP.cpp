@@ -345,7 +345,7 @@ size_t APClass::printDriverInfo(Print &out) const {
     bytes += out.print(",WPA2_PSK");
   } else if (info.ap.authmode == WIFI_AUTH_WPA_WPA2_PSK) {
     bytes += out.print(",WPA_WPA2_PSK");
-  } else if (info.ap.authmode == WIFI_AUTH_ENTERPRISE) {
+  } else if (info.ap.authmode == WIFI_AUTH_WPA2_ENTERPRISE) {
     bytes += out.print(",WEAP");
   } else if (info.ap.authmode == WIFI_AUTH_WPA3_PSK) {
     bytes += out.print(",WPA3_PSK");
@@ -355,8 +355,8 @@ size_t APClass::printDriverInfo(Print &out) const {
     bytes += out.print(",WAPI_PSK");
   } else if (info.ap.authmode == WIFI_AUTH_OWE) {
     bytes += out.print(",OWE");
-  } else if (info.ap.authmode == WIFI_AUTH_WPA3_ENT_192) {
-    bytes += out.print(",WPA3_ENT_SUITE_B_192_BIT");
+    // } else if (info.ap.authmode == WIFI_AUTH_WPA3_ENT_192) {
+    //   bytes += out.print(",WPA3_ENT_SUITE_B_192_BIT");
   }
 
   if (esp_wifi_ap_get_sta_list(&clients) == ESP_OK) {
